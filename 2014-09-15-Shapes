@@ -1,0 +1,98 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+class Shape
+{
+	virtual void Draw(){};
+};
+
+class Circle:public Shape
+{
+	
+	void Draw()
+	{
+		cout << "circle";
+	}
+	
+};
+
+class Triangle:public Shape
+{
+	void Draw()
+	{
+		cout << "Triangle";
+	}
+};
+
+class Rectangle:public Shape
+{
+public:
+	void Draw()
+	{
+		cout << "Rectangle";
+	}
+};
+
+/*void Rectangle::Draw_Rectangle()
+	{
+		wcout << " ┌────────┐\n";
+		cout << "|│        |" "\n";
+		cout << "|         |" "\n";
+		cout << "|         |" "\n";
+		cout << "|         |" "\n";
+		cout << "└─────────┘" "\n";
+	} */
+
+
+
+class position
+{
+public:
+	int x, y;
+};
+
+position getpos()
+{
+	position ret;
+	ret.x=2;
+	ret.y=3;
+	return ret;
+}
+
+void ppp(int &a, int &b)
+{
+	a = 8;
+	b = 9;
+}
+int _tmain(int argc, _TCHAR* argv[])
+{
+	//setlocale(LC_ALL, "Russian");
+	setlocale(LC_CTYPE, "C");
+	/*int a = 5;
+	int b = 7;
+	int *pointer;
+
+	pointer = &a;
+	cout << *pointer << "\n";
+
+	pointer = &b;
+	cout << *pointer;*/
+
+	int x, y;
+	position pos;
+	pos = getpos();
+	cout << pos.x << " " << pos.y <<"\n";
+
+	ppp(x, y);
+	cout << x << " " << y <<"\n";
+	Rectangle MyRec;
+
+	MyRec.Draw();
+	//_getch();
+	cin.get();
+	return 0;
+}
+
